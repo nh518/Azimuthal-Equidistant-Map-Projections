@@ -1,12 +1,13 @@
-# Azimuthal equidistant map projections of fracture visualization
+# Azimuthal equidistant mapping and projection of head CT scans for fracture visualization
 
 ## 📌 Overview
-This repository contains the MATLAB code developed as part of the supplementary material for the paper **"Azimuthal Equidistant Map Projections"**. The code implements various map projection algorithms, focusing on the **Azimuthal Equidistant projection**. For simplicity, only a sample of the data is downloaded, but if you want to run the full dataset change the paths CQ500 for the all files.
+This repository contains the MATLAB code developed as part of the supplementary material for the paper **"Azimuthal Equidistant Map Projections"**. The code implements various map projection algorithms, focusing on the **Azimuthal Equidistant projection**. For simplicity, only a sample of the data is downloaded, but if you want to run the full dataset change the paths CQ500 for the all files. 
+The proposed method maps the inherently spherical shape of the skull into a planar representation, providing radiologists with an alternative view of each complete hemisphere. Applying azimuthal equidistant mapping to CT volumetric data preserves the skull's anatomy, while fractures, which are usually perpendicular to the bone's surface, become more visible in projection views. The enhanced visibility is particularly useful for subtle basilar or facial fractures and increases the likelihood of detection. The effectiveness of the technique was evaluated using the CQ500 dataset. Azimuthal equidistant mapping and projection can become a valuable addition to conventional radiologic evaluation, offering an alternative view for radiologists and emergency department staff, which can increase the effectiveness and time efficiency of skull fracture detection.
 
 ## 📄 Paper Reference
 - **Title**: Azimuthal Equidistant Map Projections  
-- **Authors**: [Author(s) Name]  
-- **Journal/Conference**: [Journal/Conference Name]  
+- **Authors**: Nicolas Hadjittoouli, Christos Nicolaou, Costas Pitris  
+- **Journal/Conference**: IEEE Access 
 - **DOI/Link**: [Link to Paper or DOI]
 
 ## 📂 Features
@@ -18,8 +19,7 @@ This repository contains the MATLAB code developed as part of the supplementary 
 - Example scripts for reproducing results from the paper
 
 ## 🛠️ Requirements
-- MATLAB (Recommended version: R2021a or later)
-- Image Processing Toolbox (if used for visualization)
+- MATLAB (Recommended version: R2020b or later)
 
 ## 🚀 Usage
 To run the code and reproduce the results from the paper:

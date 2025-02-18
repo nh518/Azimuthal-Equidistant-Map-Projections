@@ -3,18 +3,26 @@ clc; clear; close all; tic;
 addpath('functions')
 
 % CQ500CT107 CQ500CT107
-patient_code = '107';
-
+patient_code = 'globe'; % Change the patient code to 'globe' for the example.
 root_dir = "data/CQ500"; 
 
-% Set parent directory to the CQ500
-patient_code = string(['CQ500CT' patient_code ' CQ500CT' patient_code]);
-parent_dir = fullfile(root_dir, patient_code);
-load(fullfile(parent_dir, 'rsa_transform.mat'));
-vol = movingVolume;
+if strcmp(patient_code, 'globe')
+    bone_thresh = 0;
+    vol = load("globe.mat").CT;
+    parent_dir = "./";
+    slice_end = 100;
+else
+    bone_thresh = 1200;
+    % Set parent directory to the CQ500
+    patient_code = string(['CQ500CT' patient_code ' CQ500CT' patient_code]);
+    parent_dir = fullfile(root_dir, patient_code);
+    load(fullfile(parent_dir, 'rsa_transform.mat'));
+    vol = movingVolume;
+    slice_end = 300;
+end
 
 figure
-fig = volshow(vol .* (vol>1000));
+fig = volshow(vol .* (vol>bone_thresh));
 fig.BackgroundColor = [1 1 1];
 fig.CameraPosition = [2.2680 -2.7220 0.5068];
 fig.CameraUpVector = [0.1899 -0.1941 0.9624];
@@ -53,30 +61,30 @@ end
 
 % Step 3: Visualize the mapped volumes
 figure;
-lufo=Lower .* (Lower > 1200); 
-m = volshow(lufo(:,:,1:300)); 
+lufo=Lower .* (Lower > bone_thresh); 
+m = volshow(lufo(:,:,1:slice_end)); 
 m.BackgroundColor = 'white'; 
 m.CameraPosition = [3 3 3.5];
 saveas(gcf, fullfile(output_dir, 'Vol_lower.png'));
 
 figure;
-lufo=Upper .* (Upper > 1200); 
-m = volshow(lufo(:,:,1:320)); 
+lufo=Upper .* (Upper > bone_thresh); 
+m = volshow(lufo(:,:,1:slice_end)); 
 m.BackgroundColor = 'white';
 m.CameraPosition = [-3 3 2.5];
 saveas(gcf, fullfile(output_dir, 'Vol_upper.png'));
 
 
 figure;
-lufo=Frontal .* (Frontal > 1200); 
-m = volshow(lufo(:,:,1:300)); 
+lufo=Frontal .* (Frontal > bone_thresh); 
+m = volshow(lufo(:,:,1:slice_end)); 
 m.BackgroundColor = 'white'; 
 m.CameraPosition = [3 -3 3.5];
 saveas(gcf, fullfile(output_dir, 'Vol_frontal.png'));
 
 figure;
-lufo=Occipital .* (Occipital > 1200); 
-m = volshow(lufo(:,:,1:300)); 
+lufo=Occipital .* (Occipital > bone_thresh); 
+m = volshow(lufo(:,:,1:slice_end)); 
 m.BackgroundColor = 'white'; 
 m.CameraPosition = [3 -3 3.5];
 saveas(gcf, fullfile(output_dir, 'Vol_occipital.png'));
