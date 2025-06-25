@@ -4,7 +4,7 @@ addpath('functions')
 
 % CQ500CT107 CQ500CT107
 patient_code = 'globe'; % Change the patient code to 'globe' for the example.
-root_dir = "data/CQ500"; 
+root_dir = "../data/CQ500"; 
 
 if strcmp(patient_code, 'globe')
     bone_thresh = 0;
@@ -50,7 +50,7 @@ else
 end
 toc
 %%
-output_dir = 'output';
+output_dir = '../output';
 
 if ~exist(output_dir, 'dir')  % Check if folder exists
     mkdir(output_dir);        % Create the folder

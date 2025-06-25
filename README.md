@@ -1,14 +1,34 @@
-# Azimuthal equidistant mapping and projection of head CT scans for fracture visualization
+# 🗺️ Azimuthal Equidistant Mapping and Projection of Head CT Scans for Fracture Visualization
 
 ## 📌 Overview
-This repository contains the MATLAB code developed as part of the supplementary material for the paper **"Azimuthal Equidistant Map Projections"**. The code implements various map projection algorithms, focusing on the **Azimuthal Equidistant projection**. For simplicity, only a sample of the data is downloaded, but if you want to run the full dataset change the paths CQ500 for the all files. 
-The proposed method maps the inherently spherical shape of the skull into a planar representation, providing radiologists with an alternative view of each complete hemisphere. Applying azimuthal equidistant mapping to CT volumetric data preserves the skull's anatomy, while fractures, which are usually perpendicular to the bone's surface, become more visible in projection views. The enhanced visibility is particularly useful for subtle basilar or facial fractures and increases the likelihood of detection. The effectiveness of the technique was evaluated using the CQ500 dataset. Azimuthal equidistant mapping and projection can become a valuable addition to conventional radiologic evaluation, offering an alternative view for radiologists and emergency department staff, which can increase the effectiveness and time efficiency of skull fracture detection.
+This repository provides the MATLAB code accompanying the paper **"Azimuthal Equidistant Map Projections"**. The code implements several map projection algorithms, with a primary focus on the **Azimuthal Equidistant Projection**. This method flattens the spherical anatomy of the skull into a 2D plane, offering radiologists an alternative view of each hemisphere.
+
+By applying this projection to head CT scans, subtle fractures—especially those perpendicular to the skull surface—become more visible. This increased visibility is particularly beneficial for detecting challenging basilar or facial fractures. The method was evaluated using the publicly available **CQ500** dataset and can significantly assist radiologists and emergency department personnel in improving fracture detection efficiency and accuracy.
+
+> 🔹 **Note**: For demonstration purposes, only a subset of the data is included. To run the full dataset, update the paths pointing to the CQ500 data accordingly.
+
+---
 
 ## 📄 Paper Reference
-- **Title**: Azimuthal Equidistant Map Projections  
+
+- **Title**: *Azimuthal Equidistant Map Projections*  
 - **Authors**: Nicolas Hadjittoouli, Christos Nicolaou, Costas Pitris  
-- **Journal/Conference**: IEEE Access 
-- **DOI/Link**: [Link to Paper or DOI]
+- **Published in**: *IEEE Access*, 2025  
+- **DOI**: [10.1109/ACCESS.2025.3565672](https://doi.org/10.1109/ACCESS.2025.3565672)
+
+> 📚 **Citation**:  
+```bibtex
+@ARTICLE{10980247,
+  author={Hadjittoouli, Nicolas and Nikolaou, Christos and Pitris, Costas},
+  journal={IEEE Access}, 
+  title={Azimuthal Equidistant Mapping and Projection of Head CT Scans for Fracture Visualization}, 
+  year={2025},
+  volume={13},
+  pages={78214--78220},
+  keywords={Skull;Computed tomography;Distortion;Biomedical imaging;Cartography;Anatomy;Bones;Cranial;Azimuth;Accuracy;Computed tomography;computer-aided diagnosis;fracture detection;image processing;medical imaging;skull fracture},
+  doi={10.1109/ACCESS.2025.3565672}
+}
+
 
 ## 📂 Features
 - Azimuthal Equidistant Map Projection implementation
