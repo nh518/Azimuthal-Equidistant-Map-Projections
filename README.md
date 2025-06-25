@@ -28,6 +28,7 @@ By applying this projection to head CT scans, subtle fractures—especially thos
   keywords={Skull;Computed tomography;Distortion;Biomedical imaging;Cartography;Anatomy;Bones;Cranial;Azimuth;Accuracy;Computed tomography;computer-aided diagnosis;fracture detection;image processing;medical imaging;skull fracture},
   doi={10.1109/ACCESS.2025.3565672}
 }
+```
 
 
 ## 📂 Features
